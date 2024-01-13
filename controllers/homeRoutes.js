@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Comment, Post, User } = require("../models");
-const withAuth = require('../utils/auth');
+const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
@@ -32,7 +32,8 @@ router.get("/", async (req, res) => {
 
 router.get("/posts/:id", withAuth, async (req, res) => {
   try {
-    const postData = await Post.findOne(req.params.id, {
+    const postData = await Post.findOne({
+      where: { id: req.params.id },
       attributes: ["id", "header", "body", "created_at"],
       include: [
         {
@@ -47,14 +48,14 @@ router.get("/posts/:id", withAuth, async (req, res) => {
     });
 
     if (postData) {
-        const post = postData.get({ plain: true });
-    res.render("post", {
-      post,
-      logged_in: req.session.logged_in,
-    });
+      const post = postData.get({ plain: true });
+      res.render("post", {
+        post,
+        logged_in: req.session.logged_in,
+      });
     } else {
-        res.status(400).json({message: "Post not found."});
-        return;
+      res.status(400).json({ message: "Post not found." });
+      return;
     }
   } catch (err) {
     console.log(err);
@@ -63,16 +64,16 @@ router.get("/posts/:id", withAuth, async (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect("/");
-        return;
-    } else {
-        res.render('login')
-    }
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  } else {
+    res.render("login");
+  }
 });
 
-router.get('/signup', async (req, res) => {
-    res.render('signup');
+router.get("/signup", async (req, res) => {
+  res.render("signup");
 });
 
 module.exports = router;
