@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Comment, Post, User } = require("../models");
-const withAuth = require('../utils/auth');
+const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, async (req, res) => {
   try {
@@ -63,7 +63,10 @@ router.get("/edit/:id", withAuth, async (req, res) => {
     if (userPost) {
       const post = userPost.get({ plain: true });
 
-      res.render("edit", { post, loggedIn: true });
+      res.render("edit", {
+        post,
+        loggedIn: true,
+      });
     } else {
       res.status(400).json({ message: "Post not found." });
       return;
@@ -75,7 +78,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
 });
 
 router.get("/create", (req, res) => {
-    res.render("create");
+  res.render("create");
 });
 
 module.exports = router;

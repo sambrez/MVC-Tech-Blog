@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
 
     res.render("homepage", {
       posts,
-      logged_in: req.session.logged_in,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);
@@ -51,7 +51,7 @@ router.get("/posts/:id", withAuth, async (req, res) => {
       const post = postData.get({ plain: true });
       res.render("post", {
         post,
-        logged_in: req.session.logged_in,
+        loggedIn: req.session.loggedIn,
       });
     } else {
       res.status(400).json({ message: "Post not found." });
