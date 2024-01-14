@@ -16,10 +16,11 @@
           <a href="/dashboard">Dashboard</a>
           <!-- Only display the logout link if the user is logged in -->
           {{#if logged_in}}
-            <a href="/">Logout</a>
+          {{!-- switch to button??? --}}
+            <a id="logout" href="/">Logout</a>
           {{else}}
           {{!-- if not logged in display the login link --}}
-            <a href="/login">Login</a>
+            <a href="/">Login</a>
           {{/if}}
         </nav>
       </div>
