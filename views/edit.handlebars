@@ -1,15 +1,15 @@
 <div>
     <h3>Edit Post</h3>
-    <form>
-        <label >Title</label>
-        <input name="" type="text" value="{{post.header}}"/>
-        <label>Content</label>
-        <input name="" type="text" value="{{post.body}}"/>
+    <form class="edit-post-form">
+        <label for="post-header">Title</label>
+        <input id="post-header" type="text" value="{{post.header}}"/>
+        <label for="post-body">Content</label>
+        <input id="post-body" type="text" value="{{post.body}}"/>
         <button type="submit">Update Post</button>
     </form>
 </div>
 
-<button type="submit">Delete Post</button>
+<button id="delete-post" type="submit">Delete Post</button>
 
 <script src="../public/js/edit.js"></script>
 <script src="../public/js/delete.js"></script>
