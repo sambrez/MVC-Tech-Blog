@@ -1,0 +1,15 @@
+<div>
+  {{> homepage-posts post}}
+</div>
+<div>
+    {{#each comments as |comment|}}
+    {{> comment post.comments}}
+    {{/each}}
+</div>
+<form>
+  <label>Add a Comment</label>
+  <input type="text">
+  <button type="submit">Submit</button>
+</form>
+
+<script src="../public/js/comment.js"></script>
