@@ -1,6 +1,6 @@
 {{#each comments as |comment|}}
   <div>
-    <p>{{comment.comment_body}}</p>
-    <p>by {{comment.user.username}} on {{comment.created_at}}</p>
+    <p>{{comment_body}}</p>
+    <p>by {{user.username}} on {{format_date created_at}}</p>
   </div>
 {{/each}}
