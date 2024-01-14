@@ -20,14 +20,14 @@
             <a id="logout" href="/">Logout</a>
           {{else}}
           {{!-- if not logged in display the login link --}}
-            <a href="/">Login</a>
+            <a href="/login">Login</a>
           {{/if}}
         </nav>
       </div>
       <h1>TECH BLOG</h1>
     </header>
     <main class="container container-fluid mt-5">
-      {{{body}}}
+      {{{ body }}}
     </main>
 
     <!-- Only include the logout script if the user is logged in -->
