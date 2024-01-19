@@ -29,7 +29,7 @@ router.get("/", withAuth, async (req, res) => {
 
     res.render("dashboard", {
       posts,
-      loggedIn: true,
+      logged_in: true,
     });
   } catch (err) {
     console.log(err);
@@ -65,7 +65,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
 
       res.render("edit", {
         post,
-        loggedIn: true,
+        logged_in: true,
       });
     } else {
       res.status(400).json({ message: "Post not found." });

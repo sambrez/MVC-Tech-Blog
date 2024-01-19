@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 
     res.render("homepage", {
       posts,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -46,7 +46,7 @@ router.get("/posts/:id", withAuth, async (req, res) => {
       const post = postData.get({ plain: true });
       res.render("post", {
         post,
-        loggedIn: req.session.loggedIn,
+        logged_in: req.session.logged_in,
       });
     } else {
       res.status(400).json({ message: "Post not found." });
@@ -59,8 +59,8 @@ router.get("/posts/:id", withAuth, async (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
+  if (req.session.logged_in) {
+    res.redirect("/dashoard");
     return;
   } else {
     res.render("login");
