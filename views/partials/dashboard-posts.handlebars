@@ -1,5 +1,9 @@
 <div class="card">
   <div class="card-header">
-    <h4><a href="/dashboard/edit/{{id}}">{{header}}</a></h4>
+    <h3><a href="/dashboard/edit/{{id}}">{{header}}</a></h3>
+    <h4>{{body}}</h4>
   </div>
+  {{#each comments as |comment|}}
+    {{> comment comment}}
+    {{/each}}
 </div>
