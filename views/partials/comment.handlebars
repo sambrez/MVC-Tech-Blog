@@ -1,6 +1,9 @@
-{{#each comments as |comment|}}
-  <div>
-    <p>{{comment_body}}</p>
-    <p>by {{user.username}} on {{format_date created_at}}</p>
+<div class="card-header">
+  <div class="card-title">
+  <a href="/posts/{{id}}"><h2>Comments</h2><a/>
+  <h5 class="card-subtitle">Posted by {{user.username}} on {{format_date comment.created_at}}</h5>
   </div>
-{{/each}}
+  <div class="card-body">
+    <p>{{comment.comment}}</p>
+  </div>
+</div>

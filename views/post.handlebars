@@ -2,9 +2,13 @@
   {{> homepage-posts post}}
 </div>
 <div>
+  <div>
+    <div>
     {{#each comments as |comment|}}
-    {{> comment post.comments}}
+    {{> comment}}
     {{/each}}
+</div>
+  </div>
 </div>
 <form class="create-comment-form">
   <label for="comment">Add a Comment</label>
