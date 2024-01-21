@@ -1,5 +1,11 @@
-<div>
-  {{> homepage-posts post}}
+<div class="card-header">
+  <div class="card-title">
+  <h2>{{post.header}}</h2>
+  <h5 class="card-subtitle">Posted by {{user.username}} on {{format_date post.created_at}}</h5>
+  </div>
+  <div class="card-body">
+    <p>{{post.body}}</p>
+  </div>
 </div>
 <div>
   <div>
@@ -16,4 +22,4 @@
   <button type="submit">Submit</button>
 </form>
 
-<script src="../public/js/comment.js"></script>
+<script src="/js/comment.js"></script>

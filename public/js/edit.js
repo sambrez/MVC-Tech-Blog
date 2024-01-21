@@ -8,7 +8,8 @@ async function editFormHandler(event) {
       window.location.toString().split("/").length - 1
     ];
   
-    const userInput = await fetch(`/api/posts/${id}`, {
+    
+    const userInput = await fetch(`/api/posts/${post_id}`, {
       method: "PUT",
       body: JSON.stringify({
         post_id: post_id,
@@ -28,5 +29,5 @@ async function editFormHandler(event) {
   }
   
   document
-    .querySelector(".edit-post-form")
+    .querySelector("#edit-post-form")
     .addEventListener("submit", editFormHandler);

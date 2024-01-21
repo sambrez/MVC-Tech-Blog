@@ -1,14 +1,16 @@
 <div>
     <h2>My Posts</h2>
+    {{#if posts.length}}
     <p>Click on a post to edit or delete it!</p>
+    {{else}}
+    <p>You don't have any posts yet. Get started by clicking the 'Add New Post' button below!</p>
+    {{/if}}
 </div>
-{{#if posts.length}}
 <div>
     {{#each posts as |post|}}
     {{> dashboard-posts post}}
     {{/each}}
 </div>
-{{/if}}
 
 <button type="submit"><a href="/dashboard/create">Add New Post</a></button>
 
