@@ -63,7 +63,6 @@ router.get("/:id", withAuth, async (req, res) => {
 
 // UPDATE a post
 router.put('/:id', (req, res) => {
-  //Calls the update method on the Book model
   Post.update(
     {
       header: req.body.header,

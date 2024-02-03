@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Comment, Post, User } = require("../models");
 const withAuth = require("../utils/auth");
 
+// GET all posts for logged in user
 router.get("/", withAuth, async (req, res) => {
   try {
     const userPosts = await Post.findAll({
@@ -36,6 +37,7 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+// GET for editing or deleting single post of logged in user
 router.get("/edit/:id", withAuth, async (req, res) => {
   try {
     const userPost = await Post.findOne({
@@ -72,6 +74,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
   }
 });
 
+// GET route for adding a new post
 router.get("/create", (req, res) => {
   res.render("create");
 });

@@ -1,3 +1,4 @@
+// event handler for editing a post
 async function editFormHandler(event) {
   event.preventDefault();
 
@@ -28,5 +29,6 @@ async function editFormHandler(event) {
   }
 };
 
+// event listener for editing a post
 document.getElementById("edit-post-form").addEventListener("submit", editFormHandler);
 

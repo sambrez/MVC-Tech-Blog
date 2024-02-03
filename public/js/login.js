@@ -1,3 +1,4 @@
+// event handler for logging in a user
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -19,6 +20,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// event listener for logging in a user
 document
   .querySelector('#login-form')
   .addEventListener('submit', loginFormHandler);

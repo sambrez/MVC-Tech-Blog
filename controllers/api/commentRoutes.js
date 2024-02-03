@@ -56,45 +56,4 @@ router.post("/", withAuth, async (req, res) => {
     }
 });
 
-// UPDATE a comment
-router.put("/:id", withAuth, async (req, res) => {
-    try {
-        const update = Comment.update({
-            comment: req.body.comment,
-            where: {
-                id: req.params.id,
-            },
-        });
-
-        if (update) {
-            res.status(200).json(update);
-          } else {
-            res.status(400).json({ message: "Comment not found."});
-            return;
-          }
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-// DELETE a comment
-router.delete("/:id", withAuth, async (req, res) => {
-    try {
-        const comment = Comment.destroy({
-            where: {
-                id: req.params.id,
-            },
-        });
-
-        if (comment) {
-            res.status(200).json(comment, {message: "Comment deleted."});
-          } else {
-            res.status(400).json({ message: "Comment not found."});
-            return;
-          }
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
 module.exports = router;

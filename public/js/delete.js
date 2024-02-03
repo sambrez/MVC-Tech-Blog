@@ -1,3 +1,4 @@
+// event handler for deleting a post
 const deleteFormHandler = async (event) => {
   event.preventDefault();
 
@@ -22,6 +23,6 @@ const deleteFormHandler = async (event) => {
   }
 };
 
-
+// event listener for deleting a post
 document.getElementById("delete").addEventListener("click", deleteFormHandler);
 
