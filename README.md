@@ -2,25 +2,22 @@
 
 ## Description
 
-This repository contains Javascript code, executed with Node.js, that generates an SVG file containing a generic logo. This project utilizes npm packages inquirer, jest, and fs. 
+This repository contains Javascript code, executed with Node.js, that generates  WordPress like technology blog appplication. This project utilizes npm packages express.js, mysql, sequelize, and handlebars. This repository follows the MVC file structure format.
 
-When initialized, the app prompts the user to answer a series of questions regarding the features to be included in the generated logo including text, text color, shape of the logo, and shape color. Based on the user's responses, an SVG file titled 'logo.svg' is created that contains a 300 x 200 logo that reflects the input provided.
+MySQL is utilized for creating the databases that the user credentials, posts, and comments are stored in. Sequelize is used in conjunction with node.js for handling functions and object-related mapping of database stored data. Handlebars was the HTML templating library used for this project.
 
-The file shapes.test.js utilizes the jest package for testing. This file tests the render function of each shape class (Circle, Square, Triangle), to make sure that it is generating the expected shape of a set size and color. 
-
-This is the first time that I have ever worked with svg files. The most challenging part of this project that I ran into was overcoming an issue with layering of elements within the svg file. At first, the generated svg was not displaying both the shape and the text and discovered that the issue was that the elements were layering over eachother. 
-
+This application hosts community blog posts related to technology and coding topics. When logged in or after signing up, users can view any and all posts shared by other users and may leave comments on these posts. When logged in, users can view their personal dashboard that will display any and all posts they have contributed to the site. Any of these blog posts may be edited or deleted by the user. 
 
 ## Installation
-N/A
+Install the necessary npm packages for this app by running npm install in your terminal.
 
 ## Usage
-https://drive.google.com/file/d/1DJW0CgYeovNB1BasYFyCgrd6MFWBE3el/view
+![homepage view](</public/css/Screenshot (29).png>)
 
 ## Credits
-I heavily utilized the MDN web docs on svg files for this project. Specifically, I referenced documentation on the basics of svg files, basic shapes, and text. This documentation is what helped me resolve the layering of elements issue that I faced which had to do with the order in which variables were placed in the svg string. 
+For this project I referenced the UNH Bootcamp repository's 13.18 exercise when coding the hooks in the User model. I also referenced this challenge's README.md examples for seeding the Post and Comment models. I also perdiodically referenced the documentation from Bootstrap when creating cards as well as Modzilla's documentation on the difference between reload() and replace(). LAstly, I would like to thank Lucky from AskBCS Learning Assitants who helped me troubleshoot an issue I was experiencing with some of my event handlers. With his help I learned that I had a conflict between the middleware function associated with my 'public' directory and some of my file paths.
 
 
 ## Links
-GitHub: 
-Deployed Application via Heroku: 
+GitHub: https://github.com/sambrez/MVC-Tech-Blog
+Deployed Application via Heroku: https://techblog-mvc-14-85eba46978d7.herokuapp.com/
