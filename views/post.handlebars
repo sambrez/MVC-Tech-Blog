@@ -1,7 +1,7 @@
 <div class="card-header">
   <div class="card-title">
-  <h2>{{post.header}}</h2>
-  <h5 class="card-subtitle">Posted by {{user.username}} on {{format_date post.created_at}}</h5>
+    <h2>{{post.header}}</h2>
+    <h5 class="card-subtitle">Posted by {{post.user.username}} on {{format_date post.created_at}}</h5>
   </div>
   <div class="card-body">
     <p>{{post.body}}</p>
@@ -10,10 +10,14 @@
 <div>
   <div>
     <div>
-    {{#each comments as |comment|}}
-    {{> comment}}
-    {{/each}}
-</div>
+      <h4>Comments</h4>
+      {{#each post.comments as |comment|}}
+      <div>
+        <h6>Posted by {{user.username}} on {{format_date comment.created_at}}</h6>
+        <p>{{comment.comment}}</p>
+      </div>
+      {{/each}}
+    </div>
   </div>
 </div>
 <form class="create-comment-form">
@@ -23,3 +27,4 @@
 </form>
 
 <script src="/js/comment.js"></script>
+
