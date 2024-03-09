@@ -15,7 +15,10 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  // session will expire and logout user after 20 minutes
+  cookie: {
+    expires: 20 * 60 * 1000
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
