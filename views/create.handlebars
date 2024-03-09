@@ -1,12 +1,20 @@
 {{!-- view for creating a new post --}}
 <div>
-  <h3 >Create New Post</h3>
+  <h3 class="h2">CREATE NEW POST</h3>
   <form class="create-post-form">
-    <label for="create-header">Title</label>
-    <input id="create-header" type="text"/>
-    <label for="create-body">Content</label>
-    <input id="create-body" type="text"/>
-    <button type="submit">Create</button>
+    <div class="create">
+      <label for="create-header">Title</label>
+      <br>
+      <input class="form" id="create-header" type="text" />
+    </div>
+    <div class="create">
+      <label for="create-body">Content</label>
+      <br>
+      <textarea class="form id="create-body" rows="4"></textarea>
+    </div>
+    <div class="create">
+      <button id="new" type="submit">Create</button>
+    </div>
   </form>
 </div>
 

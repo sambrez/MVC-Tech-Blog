@@ -1,10 +1,9 @@
 {{!-- card style view for each comment --}}
-<div class="card-header">
-  <div class="card-title">
-  <h6>Comments</h6>
-  <h7 class="card-subtitle">Posted by {{User.username}} on {{format_date created_at}}</h7>
-  </div>
-  <div class="card-body">
-    <p>{{comment}}</p>
+<div id="background">
+  <div id="spacing" class="comments">
+    <div class="border-left">
+      <h6 class="margin">Posted by {{User.username}} on {{format_date created_at}}</h6>
+      <p class="margin">{{comment}}</p>
+    </div>
   </div>
 </div>
