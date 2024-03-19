@@ -52,7 +52,7 @@ router.post("/", withAuth, async (req, res) => {
             res.status(400).json({message: "No comment submitted"});
         }
     } catch (err) {
-      console.log(error);
+      console.log(err);
         res.status(500).json(err);
     }
 });
